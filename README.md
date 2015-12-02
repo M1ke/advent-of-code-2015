@@ -1,6 +1,6 @@
 # Advent of Code
 
-My code to solve the [Advent of Code](http://adventofcode.com/) challenges.
+My hacks to solve the [Advent of Code](http://adventofcode.com/) challenges.
 
 ## Challenges and solved language
 
