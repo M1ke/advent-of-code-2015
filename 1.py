@@ -7,7 +7,7 @@ down = input.count(')')
 
 floor = up - down
 
-print floor
+print floor # First answer
 
 floor = 0
 n = 0
@@ -17,8 +17,7 @@ for direction in input:
 		floor+=1
 	else:
 		floor-=1
-	print 'now on '+ str(floor)
 	n+=1
 	if (floor==-1):
-		print 'step ' + str(n)
+		print 'step ' + str(n) # Second answer
 		sys.exit(0)
