@@ -11,4 +11,4 @@
 
 (defn -main [& args]
   (println "Welcome to my project! These are your args:" args)
-  (do-until inc 0 #(= (subs (int-md5 %) 0 5) "00000")))
+  (do-until inc 0 #(= (subs (int-md5 %) 0 6) "000000")))
