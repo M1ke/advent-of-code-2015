@@ -16,7 +16,7 @@ dimensions = IO.readlines "2-input"
 
 puts dimensions.size
 
-total = 0
+total_area = total_length = 0
 
 for dimension in dimensions
 	dimension_arr =  dimension.split('x').map {|x| x.to_i}
@@ -28,14 +28,18 @@ for dimension in dimensions
 	extra = sides.min / 2
 	area = sides.inject(:+)
 	area += extra
-	total += area
+	total_area += area
 
 	shortest, second_shortest = dimension_arr.sort
 	length = (2*shortest) + (2*second_shortest)
 	volume = w * h * l
+	length += volume
+
+	total_length += length
 end
 
-puts "Total area: " + total.to_s
+puts "Total area: " + total_area.to_s
+puts "Total length: " + total_length.to_s
 
 =begin
 	
