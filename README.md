@@ -8,3 +8,4 @@ My hacks to solve the [Advent of Code](http://adventofcode.com/) challenges.
 2. Ruby
 3. Go
 4. Clojure (see directory `four` and run using [leiningen](https://github.com/technomancy/leiningen))
+5. Java
