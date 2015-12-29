@@ -19,6 +19,7 @@ package main
 import (
     "fmt"
     "log"
+    "strconv"
     "io/ioutil"
 )
 
@@ -28,8 +29,44 @@ func check(e error) {
     }
 }
 
+func stringInSlice(a string, list []string) bool {
+    for _, b := range list {
+        if b == a {
+            return true
+        }
+    }
+    return false
+}
+
 func main() {
-    dat, err := ioutil.ReadFile("3-input")
+    moves, err := ioutil.ReadFile("3-input")
     check(err)
-    fmt.Print(string(dat))
+    var coords [2]int
+    coords[0] = 0
+    coords[1] = 0
+    history := make([]string, 0)
+    history = append(history, "0,0")
+
+    var coord string
+
+    for _,move := range moves {
+    	fmt.Println(string(move))
+    	switch rune(move) {
+    	case 'v':
+    		coords[1] -= 1
+    	case '<':
+    		coords[0] -= 1
+    	case '>':
+    		coords[0] += 1
+    	case '^':
+    		coords[1] += 1
+    	}
+    	coord = strconv.Itoa(coords[0]) + "," + strconv.Itoa(coords[1])
+    	fmt.Println(coord)
+    	if (!stringInSlice(coord, history)){
+    		history = append(history, coord)
+    	}
+    }
+
+    fmt.Println(len(history))
 }
